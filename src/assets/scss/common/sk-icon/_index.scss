@@ -1,0 +1,87 @@
+.sk-icon {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        flex: 1 1 auto;
+    }
+
+    &_flex {
+        display: flex;
+    }
+
+    &_type_swap {
+        width: 22px;
+        height: 22px;
+    }
+
+    &_type_dispatcher {
+        width: 16px;
+        height: 16px;
+    }
+
+    &_type_loading {
+        width: 16px;
+        height: 16px;
+        path {
+            animation: rotating 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes rotating {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    &_type_cross {
+        width: 16px;
+        height: 16px;
+    }
+
+    &_type_more {
+        width: 16px;
+        height: 16px;
+    }
+
+    &_type_dot {
+        width: 9px;
+        height: 9px;
+    }
+
+    &_type_minidot {
+        width: 3px;
+        height: 3px;
+    }
+
+    &_type_warning {
+        width: 24px;
+        height: 20px;
+    }
+
+    &_type_clear {
+        width: 16px;
+        height: 16px;
+    }
+
+    &_type_ok {
+        width: 16px;
+        height: 16px;
+    }
+
+    &_type_question {
+        width: 24px;
+        height: 24px;
+    }
+
+    &_type_updown {
+        width: 24px;
+        height: 24px;
+    }
+}

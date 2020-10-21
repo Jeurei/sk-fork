@@ -1,0 +1,98 @@
+.sk-dialog {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.5);
+        z-index: 1;
+    }
+
+    &__body {
+        flex: 0 0 300px;
+        display: flex;
+        flex-flow: column nowrap;
+        background: $white;
+        z-index: 2;
+        box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 22%);
+    }
+
+    &__content {
+        flex: 0 0 auto;
+        margin: 50px 25px;
+        color: $grey;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__buttons {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    &__button {
+        flex: 1 1 auto;
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        font: inherit;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        color: $red;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border: 0px solid $primary-color-1;
+        background-color: $white;
+        border: 1px solid $whity-blue;
+        border-bottom: 0px;
+        border-left: 0px;
+        cursor: pointer;
+        user-select: none;
+        outline: none;
+
+        &:last-child {
+            border-right: 0px;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0px 2px $blue;
+            z-index: 1;
+        }
+    }
+}
+
+.sk-dialog-warning {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: $red;
+
+    .sk-icon.sk-icon_type_warning {
+        width: 48px;
+        height: 40px;
+    }
+}

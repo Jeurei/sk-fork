@@ -1,0 +1,14 @@
+.sk-app {
+    flex-direction: column;
+    align-items: stretch;
+    width: 970px;
+
+    &__panel {
+        flex: 0 0 auto;
+        max-width: none;
+    }
+
+    &__map {
+        flex: 0 0 auto;
+    }
+}

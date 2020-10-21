@@ -1,0 +1,50 @@
+.sk-autocomplete-options {
+    $h-padding: 10px;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $white;
+    border: 1px solid $primary-color-2;
+
+    display: flex;
+    flex-flow: column nowrap;
+    user-select: none;
+    z-index: 1;
+
+    &__option {
+        flex: 0 0 auto;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 4px 20px;
+        cursor: pointer;
+
+        &:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            border-bottom: 1px solid $primary-color-2;
+        }
+    }
+
+    &__option-title {
+        flex: 0 0 auto;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &__option-description {
+        flex: 0 0 auto;
+        font-size: 10px;
+        line-height: 11px;
+        margin-top: 4px;
+
+        &:empty {
+            display: none;
+        }
+    }
+}

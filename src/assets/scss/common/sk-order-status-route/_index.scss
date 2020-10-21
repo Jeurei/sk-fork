@@ -1,0 +1,73 @@
+.sk-order-status-route {
+    &__header {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: bold;
+        color: $black;
+    }
+
+    &__addresses {
+        margin-top: 22px;
+    }
+
+    &__address {
+        margin-top: 17px;
+        background: linear-gradient(to right, rgba($black, 1) 0%,rgba($black, 1) 1px,rgba($black, 0) 1px,rgba($black, 0) 100%) 3px 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        &:first-child {
+            background-position: 3px bottom;
+            background-size: 100% 50%;
+        }
+
+        &:last-child {
+            background-position: 3px top;
+            background-size: 100% 50%;
+        }
+
+        &:not(:first-child)::after {
+            content: '';
+            display: block;
+            order: -1;
+            margin: -17px -4px 0 3px;
+            width: 1px;
+            background: #000;
+            align-self: flex-start;
+            height: 17px;
+        }
+    }
+}
+
+.sk-order-status-route-address {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: $black;
+
+    &:not(:last-child) {
+        margin-top: 17px;
+    }
+
+    &__icon {
+        flex: 0 0 auto;
+        margin-right: 16px;
+        width: 8px;
+        height: 8px;
+        background: $white;
+        border: 1px solid $black;
+        border-radius: 5px;
+        box-sizing: border-box;
+        box-shadow: 0 0 0 5px #fff; /* hack, we can spread linear-gradient on 2 separate parts */
+    }
+
+    &_done &__icon {
+        background: $black;
+    }
+
+    &__text {
+        flex: 1 1 auto;
+    }
+}

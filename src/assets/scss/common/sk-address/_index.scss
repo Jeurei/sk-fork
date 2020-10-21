@@ -1,0 +1,7 @@
+.sk-address {
+    position: relative;
+
+    &:not(&_focused) .sk-autocomplete-options {
+        display: none;
+    }
+}

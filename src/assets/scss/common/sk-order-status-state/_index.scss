@@ -1,0 +1,29 @@
+.sk-order-status-state {
+
+    &__header {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: bold;
+        color: $black;
+    }
+
+    &__panel {
+        margin-top: 13px;
+    }
+
+    &__text {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 16px;
+        color: $black;
+        white-space: pre-wrap;
+    }
+
+    &__search-loading {
+        flex: 0 0 auto;
+        color: $black;
+        margin-left: 10px;
+    }
+}

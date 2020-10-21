@@ -1,0 +1,43 @@
+.sk-header {
+    display: flex;    
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 48px;
+    margin-bottom: 15px;
+    margin-right: 0px;
+
+    &__logo {
+        flex: 0 0 auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: bold;
+        color: $black;
+    }
+
+    &__cancel-search {
+        flex: 0 0 auto;
+    }
+
+    &__cancel-order {
+        flex: 0 0 auto;
+    }
+
+    &__call {
+        flex: 0 0 auto;
+        margin-left: auto;
+        padding: 0 0 0 10px;
+
+        &-icon {
+            color: $red;
+            margin-right: 5px;
+        }
+
+        &-text {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    }
+}

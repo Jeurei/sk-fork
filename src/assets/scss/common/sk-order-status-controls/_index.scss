@@ -1,0 +1,48 @@
+.sk-order-status-controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: -5px -10px;
+
+    &__cancel {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $red; }
+    }
+
+    &__approve {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $green; }
+    }
+
+    &__igo {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $green; }
+    }
+
+    &__forget {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $red; }
+    }
+
+    &__finish {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $green; }
+    }
+
+    &__done {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $green; }
+    }
+
+    &__connect-client-and-driver {
+        flex: 0 0 auto;
+        margin: 5px 10px;
+        .sk-icon { color: $red; }
+    }
+}

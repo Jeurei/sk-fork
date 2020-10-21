@@ -1,0 +1,58 @@
+{
+    "name": "sktaxi-form",
+    "version": "0.0.0",
+    "description": "TM API form for sk-taxi.ru",
+    "scripts": {
+        "build": "webpack --mode=development --config webpack.config.js",
+        "build-prod": "webpack --mode=production --config webpack.config.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "tmapi",
+        "sktaxi"
+    ],
+    "author": "Praweb",
+    "license": "UNLICENSED",
+    "private": true,
+    "devDependencies": {
+        "@types/leaflet": "^1.5.17",
+        "copy-webpack-plugin": "^6.0.3",
+        "css-loader": "^3.6.0",
+        "file-loader": "^6.0.0",
+        "json-loader": "^0.5.7",
+        "mini-css-extract-plugin": "^0.9.0",
+        "sass": "^1.26.9",
+        "sass-loader": "^8.0.2",
+        "style-loader": "^1.2.1",
+        "tsconfig-paths-webpack-plugin": "^3.2.0",
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12"
+    },
+    "dependencies": {
+        "@babel/core": "^7.10.3",
+        "@babel/helper-module-imports": "^7.10.3",
+        "@babel/plugin-syntax-jsx": "^7.10.1",
+        "@babel/polyfill": "^7.10.1",
+        "@types/crypto-js": "^3.1.47",
+        "@types/vue2-datepicker": "^3.3.0",
+        "@vue/babel-preset-jsx": "^1.1.2",
+        "babel-loader": "^8.1.0",
+        "core-js": "^3.6.5",
+        "crypto-js": "^4.0.0",
+        "html-webpack-plugin": "^4.3.0",
+        "leaflet": "^1.6.0",
+        "perfect-scrollbar": "^1.5.0",
+        "ts-loader": "^7.0.5",
+        "typescript": "^3.9.5",
+        "vue": "^2.6.11",
+        "vue-class-component": "^7.2.3",
+        "vue-imask": "^6.0.5",
+        "vue-multiselect": "^2.1.6",
+        "vue-property-decorator": "^9.0.0",
+        "vue-tsx-support": "^2.3.3",
+        "vue2-datepicker": "^3.6.1",
+        "vue2-leaflet": "^2.5.2",
+        "vuex": "^3.5.1",
+        "vuex-module-decorators": "^0.17.0"
+    }
+}

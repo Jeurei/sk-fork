@@ -1,0 +1,68 @@
+.sk-input-group {
+    display: flex;
+    flex-flow: column nowrap;
+    // border: 1px solid $black;
+    // background: $white;
+    position: relative;
+    font-weight: inherit;
+    max-width: 100%;
+
+    &__label {
+        position: absolute;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        top: 8px;
+        left: 20px;
+        right: 20px;
+        height: 11px;
+        pointer-events: none;
+        z-index: 2;
+        order: 2;
+    }
+
+    &__label-text {
+        flex: 0 0 auto;
+        font: inherit;
+        font-size: 10px;
+        line-height: 11px;
+        color: $dark-grey;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__input {
+        flex: 1 1 auto;
+        z-index: 1;
+    }
+
+    &__input:not(.sk-text-input_textarea) {
+        min-height: 16px;
+    }
+
+    & :focus,
+    & .multiselect--active,
+    & .sk-address2_focused {
+        z-index: 3;
+        box-shadow: 0 0 0 2px $blue;
+        border-radius: 3px;
+    }
+
+    & :focus + &__label,
+    & .multiselect--active + &__label,
+    & .sk-address2_focused + &__label {
+        z-index: 3;
+    }
+
+    &__badge {
+        flex: 0 0 auto;
+        margin-left: 5px;
+        border-radius: 2px;
+        background: $red;
+        color: $white;
+        padding: 1px 6px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+}

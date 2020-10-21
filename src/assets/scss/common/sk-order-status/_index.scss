@@ -1,0 +1,53 @@
+.sk-order-status {
+    display: flex;
+    flex-flow: row nowrap;
+    
+    &__route-price {
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: column wrap;
+        margin-right: 20px;
+    }
+
+    &__route {
+        flex: 1 1 auto;
+    }
+
+    &__price-row {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__price {
+        flex: 0 0 auto;
+    }
+
+    &__overprice {
+        flex: 0 0 auto;
+        min-width: 50px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+    }
+    
+    &__state-controls {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        width: 50%;
+    }
+    
+    &__state {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+
+    &__controls {
+        flex: 0 0 auto;
+    }
+}

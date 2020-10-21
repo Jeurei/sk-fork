@@ -1,0 +1,39 @@
+.sk-order-form {
+    &__somerow {
+        flex-wrap: wrap;
+    }
+
+    &__phone {
+        margin: 10px 45px 0 0;
+        width: 100%;
+        order: 1;
+    }
+
+    &__price-group {
+        margin-left: auto;
+    }
+
+    &__wishes-row {
+        flex-direction: column;
+    }
+
+    &__wishes-car {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    &__wishes-options {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    &__wishes-toggle-schedule {
+        flex: 0 0 auto;
+    }
+
+    &__wishes-schedule-notice {
+        margin-left: 0;
+        margin-top: 10px;
+        width: auto;
+    }
+}

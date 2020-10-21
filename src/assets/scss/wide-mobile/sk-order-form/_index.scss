@@ -1,0 +1,15 @@
+.sk-order-form {
+    &__phone {
+        order: 0;
+    }
+
+    &__price-group {
+        flex: 1 1 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    &__price {
+        margin-left: 0;
+    }
+}

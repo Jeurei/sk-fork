@@ -1,0 +1,109 @@
+.sk-destination {
+    $dot-size: 9px;
+    $minidot-size: 3px;
+    $minidot-step: 18px;
+    $minidot-count: 3;
+
+    padding: 10px 20px;
+    background: $red;
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 4px;
+
+    &__letter {
+        flex: 0 0 auto;
+        width: 20px;
+        margin: auto 0;
+        user-select: none;
+        font: inherit;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+    }
+
+    &__point {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        width: $dot-size;
+        height: 18px;
+        margin: auto 15px auto 10px;
+    }
+
+    &__point-minidot {
+        flex: 0 0 auto;
+    }
+
+    @for $i from 0 to $minidot-count {
+        &__point-minidot:nth-child(#{$i + 1}) {
+            transform: translateY(- $dot-size / 2 - ($minidot-count - $i) * $minidot-step);
+        }
+    }
+
+    &__point-dot {
+        flex: 0 0 auto;
+    }
+
+    &__point-minidot + &__point-dot {
+        transform: translateY(- $dot-size / 2);
+    }
+
+    &__input-group {
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        min-width: 0;
+    }
+
+    &__address {
+        flex: 1 1 auto;
+        margin: auto 5px auto 0;
+        min-width: 0;
+    }
+
+    &__dropoff {
+        flex: 0 0 auto;
+        width: 80px;
+        margin: auto 0;
+
+        .sk-text-input {
+            padding-right: 20px;
+        }
+    }
+
+    &__clear {
+        flex: 0 0 auto;
+        width: 16px;
+        height: 16px;
+        margin: auto 0 auto 20px;
+        transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
+        outline: none;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            margin: 7px 0;
+            background: $white;
+        }
+
+        &::after {
+            margin-top: -9px;
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
+
+        &:hover,
+        &:focus {
+            &::before,
+            &::after {
+                box-shadow: 0 0 10px 1px $white;
+            }
+        }
+    }
+}

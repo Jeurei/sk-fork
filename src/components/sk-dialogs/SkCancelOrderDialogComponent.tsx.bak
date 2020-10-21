@@ -1,0 +1,34 @@
+import Component from 'vue-class-component';
+import * as tsx from 'vue-tsx-support';
+
+import { SkDialogComponent } from '../sk-dialog-service/SkDialogService';
+import { skModule } from '@store';
+
+@Component({})
+export class SkCancelOrderDialogComponent extends tsx.Component<{}> {
+    protected show: boolean = false;
+
+    protected async cancelOrder() {
+        try {
+            await skModule.cancelOrder();
+            this.show = false;
+        } catch (e) {
+            this.show = false;
+
+            // TODO show error dialog
+        }
+    }
+
+    render() {
+        return (
+            <SkDialogComponent onClose={() => (this.show = false)}>
+                <div>Вы действительно хотите отменить поиск?</div>
+
+                <template slot="buttons">
+                    <button class="sk-dialog__button" onClick={() => this.cancelOrder()}>Да</button>
+                    <button class="sk-dialog__button" onClick={() => (this.show = false)}>Нет</button>
+                </template>
+            </SkDialogComponent>
+        );
+    }
+}

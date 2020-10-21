@@ -1,0 +1,78 @@
+@import './config';
+
+@import 'vue-multiselect/dist/vue-multiselect.min';
+@import 'vue2-datepicker/index';
+@import 'perfect-scrollbar/css/perfect-scrollbar';
+
+@import './common/sk-icon';
+@import './common/sk-button';
+@import './common/sk-text-input';
+@import './common/sk-toggle';
+@import './common/sk-date-picker';
+@import './common/sk-input-group';
+@import './common/sk-phone';
+@import './common/sk-autocomplete-options';
+@import './common/sk-multiselect';
+@import './common/sk-panel';
+@import './common/sk-address';
+@import './common/sk-address2';
+@import './common/sk-destination';
+@import './common/sk-order-form';
+@import './common/sk-price';
+
+@import './common/sk-app';
+
+@import './common/sk-header';
+@import './common/sk-dialog';
+
+@import './common/sk-order-status';
+@import './common/sk-order-status-route';
+@import './common/sk-order-status-state';
+@import './common/sk-order-status-controls';
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+// laptop
+@media screen and (max-width: 1199px) {
+    @import './laptop/sk-app';
+    @import './laptop/sk-order-form';
+}
+
+// wide-tablet
+@media screen and (max-width: 991px) {
+    @import './wide-tablet/sk-app';
+}
+
+// tablet
+@media screen and (max-width: 767px) {
+    @import './tablet/sk-app';
+    @import './tablet/sk-order-form';
+}
+
+// wide-mobile
+@media screen and (max-width: 650px) {
+    @import './wide-mobile/sk-order-form';
+    @import './wide-mobile/sk-destination';
+    @import './wide-mobile/sk-order-status';
+}
+
+// mobile
+@media screen and (max-width: 449px) {
+    @import './mobile/sk-app';
+    @import './mobile/sk-order-form';
+    @import './mobile/sk-destination';
+    @import './mobile/sk-order-status';
+    @import './mobile/sk-header';
+    @import './mobile/sk-button';
+}

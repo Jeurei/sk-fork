@@ -1,0 +1,12 @@
+.sk-order-status {
+    flex-direction: column;
+
+    &__route-price {
+        flex: 0 0 auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    &__state-controls {
+        width: auto;
+    }
+}

@@ -1,0 +1,65 @@
+.sk-toggle {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    user-select: none;
+    min-height: 50px;
+    background-color: $whity3;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: inherit;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 0px 2px $blue;
+        border-color: $blue;
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        margin-right: 20px;
+        font-size: 14px;
+        line-height: 16px;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__pimp-area {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        width: 40px;
+        height: 24px;
+        padding: 1px;
+        box-sizing: border-box;
+        background: $grey;
+        transition: background-color 0.3s ease;
+        border-radius: 15px;
+    }
+
+    &__pimp {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        border-radius: 15px;
+        margin: 0;
+        box-sizing: border-box;
+        background: $white;
+        transition: margin 0.3s ease;
+    }
+
+    &_value_on &__pimp-area {
+        background-color: $red;
+    }
+
+    &_value_on &__pimp-area &__pimp {
+        margin-left: 16px;
+    }
+}

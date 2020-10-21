@@ -1,0 +1,50 @@
+.sk-text-input {
+    width: 100%;
+    font: inherit;
+    font-size: 14px;
+    line-height: 19px;
+    color: $black;
+    background: $white no-repeat right 20px center;
+    background-size: 16px 16px;
+    padding: 21px 40px 8px 20px;
+    border: 0px solid $grey;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    max-width: 100%;
+    box-shadow: 0 0 0 1px black;
+
+    &_textarea {
+        min-width: 160px;
+        min-height: 50px;
+    }
+
+    &_square {
+        border-radius: 3px;
+    }
+
+    &_bottom-spaced {
+        padding-bottom: 16px;
+    }
+
+    &_nolabel {
+        padding-top: 14px;
+        padding-bottom: 15px;
+    }
+
+    &_invalid {
+        border-color: $red;
+        background-image: url('../images/icon-error.svg');
+    }
+
+    &_valid {
+        border-color: $green;
+        background-image: url('../images/icon-valid.svg');
+    }
+
+    &_focus {
+        box-shadow: 0px 0px 0px 2px $blue;
+        border-color: $blue;
+        border-radius: 3px;
+    }
+}

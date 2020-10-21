@@ -1,0 +1,27 @@
+.sk-destination {
+    &__input-group {
+        flex-wrap: wrap;
+    }
+
+    &__address {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+
+    &__dropoff {
+        flex: 1 1 100%;
+        margin-top: 10px;
+    }
+
+    &__point-minidot:nth-child(1) {
+        transform: translateY(-97.5px);
+    }
+
+    &__point-minidot:nth-child(2) {
+        transform: translateY(-66.5px);
+    }
+
+    &__point-minidot:nth-child(3) {
+        transform: translateY(-35.5px);
+    }
+}

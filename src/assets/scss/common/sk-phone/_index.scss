@@ -1,0 +1,23 @@
+.sk-phone {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &__group {
+        flex: 1 1 auto;
+        z-index: 1;
+    }
+
+    &__clear {
+        flex: 0 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        margin: auto 10px auto -34px;
+        color: $red;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
