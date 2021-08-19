@@ -1,3 +1,3 @@
-declare module 'vue-imask' {
-    export const IMaskComponent: any;
+declare module "vue-imask" {
+  export const IMaskComponent: any;
 }

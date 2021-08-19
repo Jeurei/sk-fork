@@ -1,388 +1,554 @@
 .sk-order-form {
-    max-width: 100%;
+  max-width: 100%;
 
-    &__destinations {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-start;
-    }
-
-    &__destination {
-        width: calc(100% - 45px);
-        margin: 6px 0;
-
-        &:first-child { margin-top: 0; }
-        &:last-child { margin-bottom: 0; }
-    }
-
-    &__destination-swap {
-        width: 22px;
-        height: 22px;
-        margin: -11px 0 -11px auto;
-        cursor: pointer;
-        color: $black;
-    }
-
-    &__somerow {
-        margin-top: 26px;
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-    }
-
-    &__add-destination {
-        flex: 0 0 auto;
-        margin-right: 10px;
-    }
-
-    &__phone {
-        flex: 1 1 auto;
-        min-width: 190px;
-        margin-right: 10px;
-    }
-
-    &__price-group {
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-        min-width: 95px;
-    }
-
-    &__price {
-        flex: 0 0 auto;
-        margin: 0 20px 0 0;
-    }
-
-    &__overprice {
-        flex: 0 0 auto;
-        min-width: 50px;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-    }
-
-    &__overprice-cross {
-        background: $whity;
-        border: 2px solid $black;
-        border-radius: 10px;
-        width: 50px;
-        height: 50px;
-        box-sizing: border-box;
-        position: relative;
-        cursor: pointer;
-
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            top: calc(50% - 1px);
-            left: calc(50% - 8px);
-            width: 16px;
-            height: 2px;
-            background: $dark-grey;
-        }
-
-        &::after {
-            transform-origin: center;
-            transform: rotate(90deg);
-        }
-
-        // &:hover,
-        // &:focus {
-        //     &::before,
-        //     &::after {
-        //         box-shadow: 0 0 10px 1px $light-grey;
-        //     }
-        // }
-    }
-
-    &__help {
-        display: flex;
-        flex: 0 0 auto;
-        width: 24px;
-        height: 24px;
-        margin: 0 0 0 21px;
-        align-self: center;
-    }
-
-    &__help-button {
-        display: flex;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        color: $light-grey;
-        cursor: pointer;
-        outline: none;
-        user-select: none;
-    }
-
-    &__help-button:before {
-        content: '';
-        display: none;
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 15px 14px 0 14px;
-        border-color: $black transparent transparent transparent;
-        cursor: initial;
-        z-index: 5;
-    }
-
-    &__help-popover {
-        display: none;
-        flex-flow: column nowrap;
-        position: absolute;
-        bottom: 100%; // vertical alignment
-        margin-bottom: 14px; // vertical alignment
-        left: 50%; // horizontal alignment
-        transform: translateX(-50%); // horizontal alignment
-        background: $black;
-        font-size: 12px;
-        line-height: 14px;
-        color: $white;
-        border-radius: 6px;
-        width: 170px;
-        box-sizing: border-box;
-        padding: 30px 20px;
-        height: auto;
-        cursor: initial;
-        z-index: 5;
-    }
-
-    &__help-button:hover,
-    &__help-button:focus {
-        color: $red;
-        box-shadow: 0 0 0px 2px #000;
-        border-radius: 12px;
-
-        &:before {
-            display: block;
-        }
-
-        > .sk-order-form__help-popover {
-            display: flex;
-        }
-    }
-
-    &__help-header {
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-bottom: 6px;
-    }
-    &__help-text {
-        font-size: 12px;
-    }
-
-    &__wishes {
-        margin-top: 26px;
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: column nowrap;
-        padding-right: 45px;
-    }
-
-    &__wishes-button-row {
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-        margin-bottom: 26px;
-    }
-
-    &__wishes-button {
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-        user-select: none;
-        cursor: pointer;
-        background: transparent;
-        border: 0px solid transparent;
-        padding: 4px;
-        border-radius: 3px;
-
-        &-text {
-            font-size: 14px;
-            line-height: 16px;
-            color: $black;
-            text-transform: uppercase;
-        }
-
-        &-icon {
-            color: $red;
-            margin-left: 27px;
-            transform-origin: center;
-            transform: rotate(0deg);
-            transition: transform 0.3s ease;
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0px 2px $blue;
-        }
-    }
-
-    &__wishes_expanded &__wishes-button-icon {
-        transform: rotate(90deg);
-    }
-
-    &__wishes-content {
-        display: none;
-        flex-flow: column nowrap;
-    }
-
-    &__wishes_expanded &__wishes-content {
-        display: flex;
-    }
-
-    &__wishes-row {
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-
-        &:not(:first-child) {
-            margin-top: 20px;
-        }
-    }
-
-    &__wishes-car {
-        flex: 1 1 0;
-        margin-right: 5px;
-        min-width: 0;
-    }
-
-    &__wishes-options {
-        flex: 1 1 0;
-        margin-right: 30px;
-        min-width: 0;
-    }
-
-    &__wishes-toggle-schedule {
-        flex: 0 0 210px;
-    }
-
-    &__wishes-schedule {
-        flex: 1 1 auto;
-        display: flex;
-        flex-flow: column nowrap;
-    }
-
-    &__wishes-schedule-header {
-        flex: 0 0 auto;
-        margin-bottom: 20px;
-        font-size: 14px;
-        line-height: 16px;
-        font-weight: bold;
-    }
-
-    &__wishes-schedule-picker {
-        flex: 0 0 auto;
-    }
-
-    &__wishes-schedule-notice {
-        margin-left: 30px;
-        flex: 0 1 auto;
-        width: 300px;
-    }
-
-    &__bottomline {
-        margin: 25px 45px 0 0;
-        border-bottom: 1px solid $black;
-    }
-
-    &__comment-done {
-        margin: 25px 0 0;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        padding-right: 45px;
-    }
-
-    &__comment {
-        flex: 1 1 auto;
-        display: flex;
-        flex-flow: row nowrap;
-        margin-right: 10px;
-        min-width: 0;
-    }
-
-    &__comment-group {
-        flex: 1 1 auto;
-    }
-
-    &__done {
-        margin: 0 0 0 auto;
-        flex: 0 0 auto;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-
-        &-btn {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-        }
-
-        // &-btn {
-        //     display: flex;
-        //     flex-flow: row nowrap;
-        //     align-items: center;
-        //     user-select: none;
-        //     cursor: pointer;
-        // }
-
-        // &-btn-text {
-        //     color: $black;
-        //     font-size: 12px;
-        //     line-height: 14px;
-        //     font-weight: bold;
-        //     text-transform: uppercase;
-        // }
-
-        // &-btn-icon {
-        //     width: 40px;
-        //     height: 40px;
-        //     border-radius: 20px;
-        //     background: $red;
-        //     margin: 0 0 0 30px;
-        // }
-    }
-}
-
-.sk-order-form-schedule-notice {
+  &__destinations {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
+  }
 
-    font-size: 14px;
-    line-height: 16px;
-    color: $blue;
-    text-align: left;
+  &__destination {
+    width: calc(100% - 45px);
+    margin: 6px 0;
 
-    &__header {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__destination-swap {
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 -11px auto;
+    cursor: pointer;
+    color: $black;
+  }
+
+  &__somerow {
+    margin-top: 26px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__add-destination {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+
+  &__phone {
+    flex: 1 1 auto;
+    min-width: 190px;
+    margin-right: 10px;
+  }
+
+  &__price-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price-group {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 95px;
+  }
+
+  &__price {
+    flex: 0 0 auto;
+    margin: 0 20px 0 0;
+  }
+
+  &__overprice {
+    flex: 0 0 auto;
+    min-width: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  &__overprice-cross {
+    background: $whity;
+    border: 2px solid $black;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      left: calc(50% - 8px);
+      width: 16px;
+      height: 2px;
+      background: $dark-grey;
+    }
+
+    &::after {
+      transform-origin: center;
+      transform: rotate(90deg);
+    }
+
+    // &:hover,
+    // &:focus {
+    //     &::before,
+    //     &::after {
+    //         box-shadow: 0 0 10px 1px $light-grey;
+    //     }
+    // }
+  }
+
+  &__help {
+    display: flex;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 21px;
+    align-self: center;
+  }
+
+  &__help-button {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: $light-grey;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+  }
+
+  &__help-button:before {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 14px 0 14px;
+    border-color: $black transparent transparent transparent;
+    cursor: initial;
+    z-index: 5;
+  }
+
+  &__help-popover {
+    display: none;
+    flex-flow: column nowrap;
+    position: absolute;
+    bottom: 100%; // vertical alignment
+    margin-bottom: 14px; // vertical alignment
+    left: 50%; // horizontal alignment
+    transform: translateX(-50%); // horizontal alignment
+    background: $black;
+    font-size: 12px;
+    line-height: 14px;
+    color: $white;
+    border-radius: 6px;
+    width: 170px;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    height: auto;
+    cursor: initial;
+    z-index: 5;
+  }
+
+  &__help-button:hover,
+  &__help-button:focus {
+    color: $red;
+    box-shadow: 0 0 0px 2px #000;
+    border-radius: 12px;
+
+    &:before {
+      display: block;
+    }
+
+    > .sk-order-form__help-popover {
+      display: flex;
+    }
+  }
+
+  &__help-header {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  &__help-text {
+    font-size: 12px;
+  }
+
+  &__order-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 38px;
+  }
+
+  &__wishes {
+    margin-top: 26px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-right: 45px;
+  }
+
+  &__wishes-button-row {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__bonuses-message {
+    font-size: 10px;
+    position: absolute;
+    top: -30px;
+    text-align: center;
+    color: red;
+  }
+
+  &__bonuses-container {
+    background: #f2efef;
+    border-radius: 3px;
+    opacity: 0.3;
+    margin-top: 40px;
+    position: relative;
+    &--active {
+      opacity: 1;
+    }
+
+    .sk-toggle {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      user-select: none;
+      min-height: 50px;
+      background-color: #f2efef;
+      border: 0px solid transparent;
+      border-radius: 4px;
+      padding: 13px 15px;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-weight: inherit;
+
+      &__text {
+        flex: 1 1 auto;
+        margin-right: 20px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      &__pimp-area {
         flex: 0 0 auto;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-    }
+        justify-content: flex-start;
+        width: 40px;
+        height: 24px;
+        padding: 1px;
+        box-sizing: border-box;
+        background: #414141;
+        background-color: rgb(65, 65, 65);
+        transition: background-color 0.3s ease;
+        border-radius: 15px;
+      }
 
-    &__header-icon {
-        color: $red;
-        margin-right: 5px;
-    }
-
-    &__header-text {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    &__content {
+      &__pimp {
         flex: 0 0 auto;
-        margin-top: 10px;
+        width: 22px;
+        height: 22px;
+        border-radius: 15px;
+        margin: 0;
+        margin-left: 0px;
+        box-sizing: border-box;
+        background: #fff;
+        transition: margin 0.3s ease;
+      }
+
+      &_value_on {
+        .sk-toggle__pimp-area {
+          background-color: #ff350e;
+        }
+
+        .sk-toggle__pimp {
+          margin-left: 16px;
+        }
+      }
     }
+  }
+
+  &__wishes-button {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    user-select: none;
+    cursor: pointer;
+    background: transparent;
+    border: 0px solid transparent;
+    padding: 4px;
+    border-radius: 3px;
+
+    &-text {
+      font-size: 14px;
+      line-height: 16px;
+      color: $black;
+      text-transform: uppercase;
+    }
+
+    &-icon {
+      color: $red;
+      margin-left: 27px;
+      transform-origin: center;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0px 2px $blue;
+    }
+  }
+
+  &__wishes_expanded &__wishes-button-icon {
+    transform: rotate(90deg);
+  }
+
+  &__wishes-content {
+    display: none;
+    flex-flow: column nowrap;
+  }
+
+  &__wishes_expanded &__wishes-content {
+    display: flex;
+  }
+
+  &__wishes-row {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__wishes-car {
+    flex: 1 1 0;
+    margin-right: 5px;
+    min-width: 0;
+  }
+
+  &__wishes-options {
+    flex: 1 1 0;
+    margin-right: 30px;
+    min-width: 0;
+  }
+
+  &__wishes-toggle-schedule {
+    flex: 0 0 210px;
+  }
+
+  &__wishes-schedule {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__wishes-schedule-header {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+  }
+
+  &__wishes-schedule-picker {
+    flex: 0 0 auto;
+  }
+
+  &__wishes-schedule-notice {
+    margin-left: 30px;
+    flex: 0 1 auto;
+    width: 300px;
+  }
+
+  &__bottomline {
+    margin: 25px 45px 0 0;
+    border-bottom: 1px solid $black;
+  }
+
+  &__comment-done {
+    margin: 25px 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-right: 45px;
+  }
+
+  &__comment {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right: 10px;
+    min-width: 0;
+  }
+
+  &__comment-group {
+    flex: 1 1 auto;
+  }
+
+  &__done {
+    margin: 0 0 0 auto;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    &-btn {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+    // &-btn {
+    //     display: flex;
+    //     flex-flow: row nowrap;
+    //     align-items: center;
+    //     user-select: none;
+    //     cursor: pointer;
+    // }
+
+    // &-btn-text {
+    //     color: $black;
+    //     font-size: 12px;
+    //     line-height: 14px;
+    //     font-weight: bold;
+    //     text-transform: uppercase;
+    // }
+
+    // &-btn-icon {
+    //     width: 40px;
+    //     height: 40px;
+    //     border-radius: 20px;
+    //     background: $red;
+    //     margin: 0 0 0 30px;
+    // }
+  }
+
+  &__order-bonuses {
+    display: flex;
+    align-items: center;
+    background-color: $whity;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+
+    &--disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &__pincode-text {
+    padding-bottom: 10px;
+    display: block;
+  }
+
+  .switch__container {
+    margin-left: 10px;
+  }
+
+  .switch {
+    visibility: hidden;
+    position: absolute;
+    margin-left: -9999px;
+  }
+
+  .switch + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+  }
+
+  .switch--shadow + label {
+    padding: 2px;
+    width: 40px;
+    height: 23px;
+    background-color: #dddddd;
+    border-radius: 60px;
+  }
+  .switch--shadow + label:before,
+  .switch--shadow + label:after {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    content: "";
+  }
+  .switch--shadow + label:before {
+    right: 1px;
+    background-color: #f1f1f1;
+    border-radius: 60px;
+    transition: background 0.4s;
+  }
+  .switch--shadow + label:after {
+    width: 22px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+  }
+  .switch--shadow:checked + label:before {
+    background-color: #ff350e;
+  }
+  .switch--shadow:checked + label:after {
+    transform: translateX(21px);
+  }
+}
+
+.sk-order-form-schedule-notice {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: $blue;
+  text-align: left;
+
+  &__header {
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &__header-icon {
+    color: $red;
+    margin-right: 5px;
+  }
+
+  &__header-text {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    flex: 0 0 auto;
+    margin-top: 10px;
+  }
 }

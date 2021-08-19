@@ -1,21 +1,48 @@
 .sk-price {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0;
+  box-sizing: border-box;
+  // background: url('../images/icon-price.png') top left no-repeat;
+
+  &__label {
+    font-size: 10px;
+    line-height: 11px;
+    color: $dark-grey;
+    margin-bottom: 5px;
+  }
+
+  &__value {
+    font-size: 15px;
+    line-height: 17px;
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__bonuses {
+    font-size: 13px;
+    line-height: 11px;
+    padding-right: 38px;
+    padding-top: 10px;
+    color: #496fe3;
     display: flex;
-    flex-flow: column nowrap;
-    padding: 0;
-    box-sizing: border-box;
-    // background: url('../images/icon-price.png') top left no-repeat;
+    flex-direction: column;
 
-    &__label {
-        font-size: 10px;
-        line-height: 11px;
-        color: $dark-grey;
-        margin-bottom: 5px;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &--amount {
+        color: #000;
+        padding-top: 10px;
+      }
     }
 
-    &__value {
-        font-size: 15px;
-        line-height: 17px;
-        color: $black;
-        text-transform: uppercase;
+    &-nums {
+      font-size: 15px;
+      font-weight: bold;
+      margin-left: 10px;
     }
+  }
 }
